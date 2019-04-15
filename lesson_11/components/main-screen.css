@@ -1,0 +1,26 @@
+.main-screen {
+
+}
+
+.main-screen__wrapper {
+
+}
+
+.main-screen__title {
+
+}
+
+.main-screen__subtitle {
+
+}
+
+.main-screen__cta-button {
+    margin-top: 48px;
+}
+
+
+@media (min-width: 1200px) {
+    .main-screen {
+
+    }
+}

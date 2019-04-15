@@ -1,0 +1,11 @@
+html {
+    --main-font: "Roboto", sans-serif;
+    --color-1: #133342;
+}
+
+
+h1 {
+    font-weight: normal;
+    font-family: var(--main-font);
+    color: red;
+}

@@ -1,0 +1,19 @@
+.button {
+    padding: 5px 10px;
+    font-size: 24px;
+}
+
+.button_small {
+    padding: 5px 10px;
+    font-size: 24px;
+}
+
+.button_main {
+    color: white;
+    background: orange;
+}
+
+.button_secondary {
+    color: white;
+    background: blue;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .container {
+            /*display: flex;*/
+            height: 100vh;
+        }
+
+        .first {
+            flex-grow: 1;
+            flex-shrink: 1;
+            background-color: blue;
+        }
+
+        .second {
+            width: 0;
+            padding: 10px;
+            display: flex;
+            flex-basis: 70%;
+            flex-grow: 1;
+            flex-shrink: 2;
+            height: 30%;
+            background-color: yellow;
+        }
+
+        .inner-1 {
+            flex-basis: 50%;
+            background-color: green;
+        }
+
+        .inner-2 {
+            flex-basis: 50%;
+            background-color: red;
+        }
+
+        footer {
+            background-color: black;
+            padding: 100px 0 200px;
+        }
+
+        .wrapper {
+            color: white;
+            max-width: 630px;
+            margin: 0 auto;
+            padding: 0 15px;
+            outline: 1px solid white;
+        }
+    </style>
+</head>
+<body>
+<footer>
+    <div class="wrapper">
+        <ul>
+            <li>JS</li>
+            <li>HTML</li>
+            <li>CSS</li>
+        </ul>
+    </div>
+</footer>
+</body>
+</html>

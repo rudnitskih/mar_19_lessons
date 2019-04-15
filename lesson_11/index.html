@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .container {
+        display: grid;
+        grid-template-columns: 100px 1fr 35%;
+        grid-template-rows: 100px 300px 150px;
+    }
+
+    .container > * {
+        outline: 1px solid red;
+        color: white;
+    }
+
+    .logo {
+        background-color: blue;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+
+    .menu {
+        background-color: yellow;
+
+        grid-column-start: 2;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+
+    .news-feed {
+        background-color: blue;
+
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+
+    .content {
+        background-color: blue;
+
+        grid-column: 2/3;
+        grid-row: 2/3;
+    }
+
+    .navigation {
+        background-color: yellow;
+
+        grid-column: 3/4;
+        grid-row: 2/4;
+    }
+
+    .footer {
+        background-color: yellow;
+
+        grid-column: 1/3;
+        grid-row: 3/4;
+    }
+
+</style>
+<body>
+    <div class="container">
+        <div class="logo">Logo</div>
+        <div class="menu">Menu</div>
+        <aside class="news-feed">News feed</aside>
+        <main class="content">List of something</main>
+        <nav class="navigation">Navigation</nav>
+        <footer class="footer">Footer</footer>
+    </div>
+</body>
+</html>

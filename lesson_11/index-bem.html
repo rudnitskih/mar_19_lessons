@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+    .parameter-info_round-left {
+        border-bottom-left-radius: 5px;
+        border-top-left-radius: 5px;
+    }
+
+    .flex {
+        display: flex;
+    }
+
+    @media (min-width: 300px)  {
+        .flex {
+            display: none;
+        }
+    }
+
+    img:after {
+
+    }
+
+    input:after {
+
+    }
+</style>
+
+<body>
+    <section class="main-screen">
+        <img src="" alt="" class="logo">
+        <input type="text">
+
+        <div class="main-screen__wrapper">
+            <h1 class="main-screen__title"></h1>
+            <h2 class="main-screen__smaller-text"></h2>
+
+            <div class="search-parameters">
+                <div class="parameter-info parameter-info_round-left">
+                    <input type="text"
+                           placeholder="Откуда"
+                           class="parameter-info__input">
+                    <span class="parameter-info__right-text"></span>
+                    <img src="" alt="" class="parameter-info__icon">
+                </div>
+
+                <div class="parameter-info">
+                    <input type="text"
+                           placeholder="Куда"
+                           class="parameter-info__input"
+                    >
+                </div>
+
+                <div class="parameter-info flex">
+                    <input type="text"
+                           placeholder="Обратно"
+                           class="parameter-info__input"
+                    >
+                    <img src="" alt="" class="parameter-info__red-icon">
+                </div>
+            </div>
+
+            <div class="main-screen__cta-button">
+                <button class="button button_small">
+                    Найти билеты
+
+                    <img src="" alt="">
+                </button>
+
+                <a href="fgdsfgd" class="button"></a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
