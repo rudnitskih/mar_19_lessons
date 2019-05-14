@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+    .square {
+        position: relative;
+        top: 0;
+        width: 300px;
+        height: 300px;
+        background-color: yellow;
+    }
+
+    .square:first-child {
+        animation-name: change-color;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        /*animation-direction: alternate;*/
+        animation-timing-function: linear;
+    }
+
+    .square:hover {
+
+    }
+
+    @keyframes change-color {
+        0% {
+            background-color: blue;
+        }
+
+        40% {
+            background-color: red;
+        }
+
+        89% {
+            background-color: yellow;
+        }
+    }
+</style>
+
+
+<body>
+
+<div class="square"></div>
+<div class="square"></div>
+
+
+
+<svg height="153" width="153" style="display: none">
+    <circle cx="77"
+            cy="77"
+            fill="transparent"
+            r="75"
+            stroke="red"
+            stroke-width="3"
+            stroke-dasharray="20">
+    </circle>
+</svg>
+
+</body>
+</html>
