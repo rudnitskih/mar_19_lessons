@@ -89,5 +89,3 @@ const cats = [
     'created_at': '2018-02-06T23:08:49.216Z',
     'updated_at': '2018-02-06T23:08:49.216Z',
   }];
-
-console.log(cats);
