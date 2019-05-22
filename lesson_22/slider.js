@@ -1,5 +1,7 @@
 function makeSlider(images) {
+  return {
 
+  }
 }
 
 const slider = makeSlider([
@@ -13,3 +15,5 @@ slider.next();
 slider.prev();
 slider.next();
 slider.showCurrent(); // 'dog.png'
+slider.setSlide(3)
+slider.showCurrent(); // 'horse.png'
