@@ -51,13 +51,9 @@ p{
     text-align: center;
 }
 
-.site-footer .container:after {
+.container:after {
     content: "";
-    display: block;
-    width: 100px;
-    height: 100px;
-    background-color: yellow;
-    background-color: yellow;
+    clear: both;
 }
 
 

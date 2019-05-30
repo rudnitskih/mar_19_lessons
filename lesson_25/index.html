@@ -4,24 +4,6 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link href="main.css" rel="stylesheet">
-
-    <script>
-      /**
-       0. Log document object to the console. Check which children document object has. Go to 3 levels deeper and discover their children as well.
-       1. Change background of body element to #77f2eb.
-       2. Find <h1> element and change `font-size` of this element to 50px;
-       3. Find #footer element and change some property here :)
-       4. Find '.grid-row' element inside 'section' element. Add some green border to all children of this element.
-       4. Find all <a> elements on the page and change their color to "orange".
-       5. Find parent element of .site-navigation element and add red outline to it.
-       6. Find all <p> elements on the page near the <img> elements. Change font-size of these elements to 20px.
-       7. Find all <p> elements which doesn't have <img> siblings. Add some outline for these elements.
-       8. Find all <a> elements which are not located in <nav> element. Add some border for these elements
-       */
-
-
-
-    </script>
 </head>
 <body>
 
@@ -70,7 +52,65 @@
     </div>
 </footer>
 
+<script>
+  /**
+   0. Log document object to the console. Check which children document object has. Go to 3 levels deeper and discover their children as well.
 
+   */
+
+  // 1. Change background of body element to #77f2eb.
+  document.body.style.backgroundColor = '#77f2eb';
+
+  // 2. Find <h1> element and change `font-size` of this element to 50px;
+  document.querySelector('h1').style.fontSize = '50px';
+
+  // 3. Find #footer element and change some property here :)
+  document.querySelector('#footer');
+
+  // 4. Find '.grid-row' element inside 'section' element. Add some green border to all children of this element.
+  [...document.querySelectorAll('section .grid-row > *')].forEach((child) => {
+    child.style.border = '5px solid green';
+  });
+
+  // 4. Find all <a> elements on the page and change their color to "orange".
+
+  // 5. Find parent element of .site-navigation element and add red outline to it.
+  document.querySelector('.site-navigation').parentElement.style.outline = '5px dotted red';
+
+  // 6. Find all <p> elements on the page near the <img> elements. Change font-size of these elements to 20px.
+  [...document.querySelectorAll('img + p')].forEach((paragraph) => {
+    paragraph.style.fontSize = '20px';
+  });
+
+  [...document.querySelectorAll('img')].forEach((image) => {
+    if (image.nextElementSibling instanceof HTMLParagraphElement) {
+      image.nextElementSibling.style.fontSize = '50px';
+    }
+  });
+
+  // 7. Find all <p> elements which doesn't have <img> siblings. Add some outline for these elements.
+
+  [...document.querySelectorAll('p')].forEach((paragraph) => {
+    const prev = paragraph.previousElementSibling;
+    const next = paragraph.nextElementSibling;
+
+    const isPrevImage = prev !== null && prev.matches('img');
+    const isNextImage = next !== null && next.matches('img');
+
+    if (!isPrevImage && !isNextImage) {
+      paragraph.style.outline = "1px solid red";
+    }
+  });
+
+  // 8. Find all <a> elements which are not located in <nav> element. Add some border for these elements
+
+  [...document.querySelectorAll('a')].forEach((anchor) => {
+    if (anchor.closest('nav') === null) {
+      anchor.style.border = '1px solid green';
+    }
+  });
+
+</script>
 
 </body>
 </html>
