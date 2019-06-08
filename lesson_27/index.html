@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>Document</title>
+</head>
+<body>
+<input type="text">
+<a href="https://google.com">Google</a>
+
+<script>
+  const field = document.querySelector("input");
+
+  field.onfocus = function someFocus() {
+    console.log('Focus');
+  };
+
+  setTimeout(function () {
+    field.onfocus = '';
+  }, 2000);
+
+  /*
+  field.addEventListener('input', function (event) {
+    event.target.value = event.target.value.replace(/[wqz]/i, '');
+  });
+  */
+
+  const onFocusHandler = function (event) {
+    console.log('blur');
+  };
+
+  field.addEventListener('blur', onFocusHandler);
+
+  setTimeout(() => {
+    field.removeEventListener('blur', onFocusHandler);
+  }, 2000);
+
+  field.addEventListener('keydown', function (event) {
+    const restrictedChars = ['w', 'q', 'x'];
+
+    const isRestrictedCharEntered = restrictedChars.some(function (restrictedChar) {
+      return restrictedChar === event.key.toLowerCase();
+    });
+
+    if (isRestrictedCharEntered) {
+      event.preventDefault();
+    }
+  });
+</script>
+</body>
+</html>
