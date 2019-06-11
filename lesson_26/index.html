@@ -12,12 +12,13 @@
 <div class="header" id="myDIV">
     <h2>My To Do List</h2>
     <input id="myInput" placeholder="Title..." type="text">
-    <span class="addBtn">Add</span>
+    <button class="addBtn">Add</button>
 </div>
 
 <ul id="myUL">
 
 </ul>
+<!--
 <script>
   const list = [
     'Hit the gym',
@@ -40,25 +41,80 @@
     return `<span class="close">×</span>`;
   }
 
-  [...document.querySelectorAll('.close')]
-    .forEach((closeButton) => {
-      closeButton.addEventListener('click', () => {
-        closeButton.parentElement.remove();
-      });
+  function addCloseHandlerClick(closeButton) {
+    closeButton.addEventListener('click', () => {
+      closeButton.parentElement.remove();
     });
+  }
 
-  [...document.querySelectorAll('li')]
-    .forEach((todoItem) => {
-      todoItem.addEventListener('click', () => {
-        todoItem.classList.toggle('checked');
-      });
+  function addRowHandlerClick(todoItem) {
+    todoItem.addEventListener('click', () => {
+      todoItem.classList.toggle('checked');
     });
+  }
+
+  [...document.querySelectorAll('.close')].forEach(addCloseHandlerClick);
+  [...document.querySelectorAll('li')].forEach(addRowHandlerClick);
 
   document.querySelector('.addBtn').addEventListener('click', () => {
     const textValue = document.querySelector('#myInput').value;
 
     if (textValue) {
       const liElement = document.createElement('li');
+
+      liElement.innerHTML = `${textValue}${getCloseButton()}`;
+
+      addRowHandlerClick(liElement);
+      addCloseHandlerClick(liElement.querySelector('.close'));
+
+      document.querySelector('#myUL').append(liElement);
+      document.querySelector('#myInput').value = '';
+    }
+  });
+</script>
+-->
+
+<script>
+  const list = [
+    'Hit the gym',
+    'Pay bills',
+    'Meet George',
+    'Buy eggs',
+    'Read a book',
+    'Organize office',
+  ];
+
+  let result = '';
+
+  for (let i = 0; i < list.length; i++) {
+    result += `<li class="todo-item">${list[i]}${getCloseButton()}</li>`;
+  }
+
+  document.querySelector('#myUL').innerHTML = result;
+
+  function getCloseButton() {
+    return `<span class="close">×</span>`;
+  }
+
+  document.querySelector('#myUL').addEventListener('click', (event) => {
+    const isCloseButtonClick = event.target.matches('.close');
+    const isRowClick = event.target.matches('li');
+
+    if (isCloseButtonClick) {
+      event.target.parentElement.remove();
+    }
+
+    if (isRowClick) {
+      event.target.classList.toggle('checked');
+    }
+  });
+
+  document.querySelector('.addBtn').addEventListener('click', () => {
+    const textValue = document.querySelector('#myInput').value;
+
+    if (textValue) {
+      const liElement = document.createElement('li');
+
       liElement.innerHTML = `${textValue}${getCloseButton()}`;
 
       document.querySelector('#myUL').append(liElement);

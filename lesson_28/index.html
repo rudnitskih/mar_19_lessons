@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .card {
+            padding: 50px;
+            opacity: 0.9;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="card green">
+        <div class="card blue">
+            <div class="card red"></div>
+        </div>
+    </div>
+
+<script>
+    function addClickListener(element) {
+      element.addEventListener('click', (event) => {
+        console.log('Handler element:', element);
+        console.log('Target:', event.target);
+      });
+    }
+
+    addClickListener(document);
+</script>
+</body>
+</html>
