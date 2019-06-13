@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link crossorigin="anonymous"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          rel="stylesheet">
+</head>
+<style>
+    body {
+        margin: 50px;
+    }
+
+    .tab-pane img {
+        display: block;
+        margin: 30px auto;
+    }
+</style>
+
+<body>
+    <div class="hobbies"></div>
+    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam dolorem eius, eveniet expedita explicabo fuga
+        placeat sunt? A animi atque, dignissimos doloremque esse eveniet facilis id in incidunt nostrum, sunt!
+    </div>
+    <div>Ad assumenda at consequatur cum deserunt dicta distinctio doloremque dolorum earum enim exercitationem expedita
+        facilis ipsum iste, labore laboriosam nisi numquam possimus quam quisquam? Enim magni nihil sequi ullam vero!
+    </div>
+    <div>Ad alias eius eos error eveniet, libero, nihil non nulla, odio quasi quis soluta ullam voluptates? Ab
+        cupiditate earum eligendi explicabo incidunt natus non quae vitae voluptatibus. Aliquid, doloremque, est?
+    </div>
+    <div>Consequatur ex laborum minus obcaecati reiciendis rerum tenetur! Ad amet at, consectetur exercitationem
+        explicabo, facilis inventore molestiae molestias mollitia odit omnis pariatur possimus quam reprehenderit
+        repudiandae soluta voluptate voluptates! Harum?
+    </div>
+    <div>A maxime obcaecati quas quod? Alias eaque fuga harum id itaque qui! Deleniti dolor facilis officiis, recusandae
+        temporibus totam. Accusamus assumenda commodi ducimus eveniet fugit libero, nemo quaerat quo ut.
+    </div>
+    <div>Accusamus dicta dignissimos dolorum explicabo fugit, laudantium odit officiis praesentium quod sed similique
+        suscipit tenetur velit. Corporis dolore doloremque expedita fugit iure, magnam odit quae? Amet inventore
+        quisquam recusandae totam.
+    </div>
+    <div>Aperiam dolorem illum laboriosam, molestias nemo omnis perferendis quod sed. Architecto beatae delectus dicta
+        ducimus error esse et ex fugiat hic laborum, magni molestias officiis optio, porro repellat repellendus rerum?
+    </div>
+    <div>Consectetur, cum cupiditate deleniti est illum iure quod. Dicta magnam sit veritatis? Accusamus accusantium
+        alias dicta dolores, doloribus eaque eius eligendi enim eveniet harum id nam quo rem, repellat, sed?
+    </div>
+    <div>Accusantium cum dolorum eaque esse laudantium nostrum placeat reprehenderit, veniam. Cum cumque deserunt eaque
+        fugiat necessitatibus rem vel voluptatem? Aliquid animi at enim fugit impedit nulla quod repellendus soluta
+        voluptatem.
+    </div>
+    <div>Autem, dicta, ex. Libero, maxime necessitatibus. Ab ad aspernatur cum dolores, earum eos error ex expedita
+        harum ipsam iusto laboriosam neque, nihil optio quia rerum sapiente suscipit unde vero, voluptatum!
+    </div>
+
+    <div class="receipts"></div>
+</body>
+<script>
+    class Tabs {
+      constructor(config) {
+        const tabs = config.tabs;
+        const element = config.element;
+
+        render(tabs);
+
+        const navLinks = [...element.querySelectorAll('.nav-link')];
+        const tabPanes = [...element.querySelectorAll('.tab-pane')];
+
+        navLinks.forEach(function (navLink) {
+          navLink.addEventListener('click', () => {
+            navLinks.forEach((currentNavLink, index) => {
+              if (currentNavLink === navLink) {
+                currentNavLink.classList.add('active');
+                tabPanes[index].classList.add('active', 'show');
+              } else {
+                currentNavLink.classList.remove('active');
+                tabPanes[index].classList.remove('active', 'show');
+              }
+            });
+          });
+        });
+
+        function render(tabs) {
+          const navItems = tabs.map((tab, index) => {
+            const title = tab.title;
+
+            return `
+        <li class="nav-item">
+            <a class="nav-link ${index === 0 ? 'active' : ''}"
+               href="#${title}">
+                ${title}
+            </a>
+        </li>
+      `;
+          }).join('');
+
+          const tabPanes = tabs.map(({content}, index) => {
+            return `
+            <div class="tab-pane fade ${index === 0 ? 'active show' : ''}">
+                ${content}
+            </div>
+        `;
+          }).join('');
+
+
+          element.innerHTML = `
+        <ul class="nav nav-tabs">
+            ${navItems}
+        </ul>
+
+        <div class="tab-content">
+            ${tabPanes}
+        </div>
+    `;
+        }
+      }
+    }
+
+  const recepies = [
+    {
+      title: 'Cake',
+      content: `
+            <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png"
+                width="100">
+        `
+    },
+    {
+      title: 'Cookies',
+      content: `
+            <img src="data:image/png;base64,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"
+                 width="100"/>
+        `
+    },
+    {
+      title: 'Pie',
+      content: `<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png"
+             width="100"/>`
+    }
+  ];
+
+
+    const hobbies = [
+      {
+        title: 'HTML',
+        content: `
+            <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png"
+                width="100">
+        `
+      },
+      {
+        title: 'CSS',
+        content: `
+            <img src="data:image/png;base64,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"
+                 width="100"/>
+        `
+      },
+      {
+        title: 'JS',
+        content: `<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png"
+             width="100"/>`
+      }
+    ];
+
+
+    new Tabs({
+      tabs: hobbies,
+      element: document.querySelector('.hobbies')
+    });
+
+    new Tabs({
+      tabs: recepies,
+      element: document.querySelector('.receipts')
+    });
+
+</script>
+
+</html>
