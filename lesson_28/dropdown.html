@@ -146,6 +146,8 @@
    4. Uncomment second dropddown and check if your logic work for both dropdowns.
    */
 
+  const dropdowns = [...document.querySelectorAll('.dropdown')];
+
   document.addEventListener('click', ({target}) => {
     const isButtonClick = target.matches('.dd-button');
     const dropdown = target.closest('.dropdown');
@@ -154,7 +156,7 @@
       dropdown.querySelector('.dd-menu').classList.toggle('visible');
     }
 
-    [...document.querySelectorAll('.dropdown')].forEach((currentDropdown) => {
+    dropdowns.forEach((currentDropdown) => {
       console.log(currentDropdown);
       if (currentDropdown !== dropdown) {
         currentDropdown.querySelector('.dd-menu').classList.remove('visible');
