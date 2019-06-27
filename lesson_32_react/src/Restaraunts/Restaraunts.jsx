@@ -8,7 +8,7 @@ export function Restaraunts() {
     <ul className="restaurants">
       {restaurants.map((restaurent, i) => {
         return (
-          <li key={i}>
+          <li key={restaurent.uuid}>
             <Link to="/restaurant">
               <StoreCard
                 restaurent={restaurent}

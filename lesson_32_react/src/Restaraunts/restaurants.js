@@ -2,6 +2,7 @@ export const restaurants = [
     {
       "uuid": "6585ad84-b9b0-4ab0-be54-f22657cd29bc",
       "title": "Musafir (вул. Саксаганського)",
+      "notAvaialble": true,
       "imageUrl": "https://uber-eats-mates.herokuapp.com/images/ed032859-05fa-4761-9a4f-ac5fb7d5859a.jpg",
       "location": {
         "latitude": 50.435982,
@@ -290,7 +291,6 @@ export const restaurants = [
     {
       "uuid": "b4966a8c-1b47-41f1-94ce-3f138127f9f0",
       "title": "Green 13 (Бессарабська площа)",
-      "imageUrl": "https://uber-eats-mates.herokuapp.com/images/1543587430556-w550-47.jpg",
       "location": {
         "latitude": 50.442383,
         "longitude": 30.521535,
@@ -749,7 +749,6 @@ export const restaurants = [
     {
       "uuid": "7ba8a72c-0962-4672-9668-54691bb8c224",
       "title": "Сушия (вул. Г. Кірпи)",
-      "imageUrl": "https://uber-eats-mates.herokuapp.com/images/be1c1aa8-604c-4b62-966b-807ca06adab0.jpg",
       "location": {
         "latitude": 50.43883654193364,
         "longitude": 30.484408818940935,
@@ -973,6 +972,7 @@ export const restaurants = [
           "keyName": "Sushi"
         }
       ],
+      "notAvaialble": true,
       "tags": [
         {
           "uuid": "Japanese",
