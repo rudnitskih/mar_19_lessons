@@ -1,6 +1,6 @@
 import React from "react";
-import './Header.css';
-import {Logo} from "./Logo";
+import "./Header.css";
+import { Logo } from "./Logo";
 
 export function Header() {
   return (
@@ -19,5 +19,5 @@ export function Header() {
         Learn React
       </a>
     </header>
-  )
+  );
 }

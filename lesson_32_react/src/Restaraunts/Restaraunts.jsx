@@ -1,7 +1,7 @@
-import React from 'react';
-import {Link} from "react-router-dom";
-import {StoreCard} from "../StoreCard/StoreCard";
-import {restaurants} from './restaurants';
+import React from "react";
+import { Link } from "react-router-dom";
+import { StoreCard } from "../StoreCard/StoreCard";
+import { restaurants } from "./restaurants";
 
 export function Restaraunts() {
   return (
@@ -10,9 +10,7 @@ export function Restaraunts() {
         return (
           <li key={restaurent.uuid}>
             <Link to="/restaurant">
-              <StoreCard
-                restaurent={restaurent}
-              />
+              <StoreCard restaurent={restaurent} />
             </Link>
           </li>
         );
