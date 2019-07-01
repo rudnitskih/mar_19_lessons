@@ -35,7 +35,20 @@
     ]
   },
   "devDependencies": {
+    "husky": ">=1",
+    "lint-staged": ">=8",
     "prettier": "1.18.2",
     "surge": "^0.21.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,css}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
