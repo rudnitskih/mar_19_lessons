@@ -2,18 +2,34 @@ import React from "react";
 import { Search } from "../Search/Search";
 import { Restaraunts } from "../Restaraunts/Restaraunts";
 
-export function MainPage() {
-  const title = "Kyiv Restararunt";
+export class MainPage extends React.Component {
+  constructor(props) {
+    super(props);
 
-  return (
-    <div className="main-page">
-      <div className="main-page__search">
-        <Search />
+    this.state = {
+      searchValue: ""
+    };
+  }
+
+  updateSearchValue = searchValue => {
+    this.setState({
+      searchValue: searchValue
+    });
+  };
+
+  render() {
+    const title = "Kyiv Restararunt";
+
+    return (
+      <div className="main-page">
+        <div className="main-page__search">
+          <Search onSearchChange={this.updateSearchValue} />
+        </div>
+
+        <h1 className="main-page__title">{title}</h1>
+
+        <Restaraunts searchValue={this.state.searchValue} />
       </div>
-
-      <h1 className="main-page__title">{title}</h1>
-
-      <Restaraunts />
-    </div>
-  );
+    );
+  }
 }

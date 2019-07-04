@@ -1,5 +1,5 @@
 import React from "react";
-import "./StoreCard.css";
+import styles from "./StoreCard.module.css";
 import classNames from "classnames";
 
 function onCardClick(storeName) {
@@ -9,8 +9,8 @@ function onCardClick(storeName) {
 export function StoreCard(props) {
   const { notAvaialble, title, categories, imageUrl } = props.restaurent;
 
-  let className = classNames("store-card", {
-    "store-card--not-available": notAvaialble
+  let className = classNames(styles.storeCard, {
+    [styles.notAvailable]: notAvaialble
   });
   let loading = false;
 
@@ -18,7 +18,7 @@ export function StoreCard(props) {
     <h1>Loading...</h1>
   ) : (
     <button className={className} onClick={() => onCardClick(title)}>
-      <span className="store-card__title">{title}</span>
+      <span className={styles.title}>{title}</span>
       {imageUrl !== undefined && (
         <img src={imageUrl} alt="" width="50px" className="store-card__image" />
       )}

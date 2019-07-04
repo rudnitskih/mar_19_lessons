@@ -1,0 +1,13 @@
+.storeCard {
+  border: 1px solid green;
+}
+
+.title {
+}
+
+.categories {
+}
+
+.notAvailable {
+  border-color: red;
+}

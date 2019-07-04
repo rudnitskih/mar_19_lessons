@@ -3,18 +3,20 @@ import { Link } from "react-router-dom";
 import { StoreCard } from "../StoreCard/StoreCard";
 import { restaurants } from "./restaurants";
 
-export function Restaraunts() {
+export function Restaraunts(props) {
   return (
     <ul className="restaurants">
-      {restaurants.map((restaurent, i) => {
-        return (
-          <li key={restaurent.uuid}>
-            <Link to="/restaurant">
-              <StoreCard restaurent={restaurent} />
-            </Link>
-          </li>
-        );
-      })}
+      {restaurants
+        .filter(restaurent => restaurent.title.includes(props.searchValue))
+        .map((restaurent, i) => {
+          return (
+            <li key={restaurent.uuid}>
+              <Link to="/restaurant">
+                <StoreCard restaurent={restaurent} />
+              </Link>
+            </li>
+          );
+        })}
     </ul>
   );
 }
