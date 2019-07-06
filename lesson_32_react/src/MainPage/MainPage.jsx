@@ -1,6 +1,7 @@
 import React from "react";
 import { Search } from "../Search/Search";
 import { Restaraunts } from "../Restaraunts/Restaraunts";
+import { Container } from "../Container/Container";
 
 export class MainPage extends React.Component {
   constructor(props) {
@@ -21,15 +22,17 @@ export class MainPage extends React.Component {
     const title = "Kyiv Restararunt";
 
     return (
-      <div className="main-page">
-        <div className="main-page__search">
-          <Search onSearchChange={this.updateSearchValue} />
+      <Container>
+        <div className="main-page">
+          <div className="main-page__search">
+            <Search onSearchChange={this.updateSearchValue} />
+          </div>
+
+          <h1 className="MainPage__title">{title}</h1>
+
+          <Restaraunts searchValue={this.state.searchValue} />
         </div>
-
-        <h1 className="main-page__title">{title}</h1>
-
-        <Restaraunts searchValue={this.state.searchValue} />
-      </div>
+      </Container>
     );
   }
 }
