@@ -19,9 +19,17 @@ export function StoreCard(props) {
   ) : (
     <button className={className} onClick={() => onCardClick(title)}>
       <span className={styles.title}>{title}</span>
-      {imageUrl !== undefined && (
-        <img src={imageUrl} alt="" width="50px" className="store-card__image" />
-      )}
+
+      <div className="store-card__image-wrapper">
+        {imageUrl !== undefined && (
+          <img
+            src={imageUrl}
+            alt=""
+            width="50px"
+            className="store-card__image"
+          />
+        )}
+      </div>
 
       <ul className="store-card__categories">
         {categories.map((category, i) => {

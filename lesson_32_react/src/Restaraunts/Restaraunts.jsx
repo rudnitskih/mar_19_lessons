@@ -10,7 +10,7 @@ export function Restaraunts(props) {
         .filter(restaurent => restaurent.title.includes(props.searchValue))
         .map((restaurent, i) => {
           return (
-            <li key={restaurent.uuid}>
+            <li key={restaurent.uuid} className="restaurants__item">
               <Link to="/restaurant">
                 <StoreCard restaurent={restaurent} />
               </Link>
