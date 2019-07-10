@@ -20,7 +20,7 @@ function App() {
 
       <Router>
         <Route path="/" exact component={MainPage} />
-        <Route path="/restaurant" component={RestaurantPage} />
+        <Route path="/restaurant/:id" component={RestaurantPage} />
       </Router>
     </>
   );

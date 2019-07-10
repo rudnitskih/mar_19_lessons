@@ -3,7 +3,7 @@ import { Search } from "../Search/Search";
 import { Restaraunts } from "../Restaraunts/Restaraunts";
 import { Container } from "../Container/Container";
 
-export class MainPage extends React.Component {
+export class MainPage extends React.PureComponent {
   constructor(props) {
     super(props);
 
