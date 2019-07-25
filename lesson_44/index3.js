@@ -44,5 +44,5 @@ getJson("https://uber-eats-mates.herokuapp.com/api/v1/restaurants")
   })
   .catch((e) => {
     console.log('Could not process data', e);
-  });
+  })
 
