@@ -4,10 +4,12 @@ import { Header } from "./Header/Header";
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import { MainPage } from "./MainPage/MainPage";
 
-function RestaurantPage() {
+function RestaurantPage(props) {
+  const restaurantId = props.match.params.id;
+
   return (
     <h1>
-      Musafitr Restaurant page
+      ID: {restaurantId}
       <Link to="/">Back to main</Link>
     </h1>
   );

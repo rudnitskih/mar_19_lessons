@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  fetch("https://www.ubereats.com/api/getActiveOrdersV1", {
+    "credentials": "include",
+    "headers": {
+      "accept": "*/*",
+      "accept-language": "en-UA",
+      "content-type": "application/json",
+      "x-csrf-token": "x"
+    },
+    "referrer": "https://www.ubereat.com/en-UA/feed/?pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMlRhcmFzaXZza2ElMjBTdHJlZXQlMjIlMkMlMjJyZWZlcmVuY2UlMjIlM0ElMjJFaU5VWVhKaGMybDJjMnRoSUZOMExDQkxlV2wyTENCVmEzSmhhVzVsTENBd01qQXdNQ0l1S2l3S0ZBb1NDY1V3Z09fNnp0UkFFUkFpQTJYSjNvMnlFaFFLRWdrRlJWcmhUc19VUUJILVJnRVgwakZKZGclMjIlMkMlMjJyZWZlcmVuY2VUeXBlJTIyJTNBJTIyZ29vZ2xlX3BsYWNlcyUyMiUyQyUyMmxhdGl0dWRlJTIyJTNBNTAuNDM3MjUzMiUyQyUyMmxvbmdpdHVkZSUyMiUzQTMwLjUwNjg3ODM5OTk5OTk5OCU3RA%3D%3D",
+    "referrerPolicy": "no-referrer-when-downgrade",
+    "body": "{}",
+    "method": "POST",
+    "mode": "cors"
+  }).then((response) => {
+    return response.json();
+  }).then((data) => {
+    console.log(data)
+  });
+</script>
+
+</body>
+</html>
