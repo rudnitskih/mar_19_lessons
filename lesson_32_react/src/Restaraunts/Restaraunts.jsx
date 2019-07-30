@@ -5,14 +5,13 @@ import { StoreCard } from "../StoreCard/StoreCard";
 export function Restaraunts(props) {
   const [restaurants, setRestaraunts] = useState([]);
 
-  useEffect(() => {
-    fetch("https://uber-eats-mates.herokuapp.com/api/v1/restaurants")
-      .then(response => {
-        return response.json();
-      })
-      .then(loadedRestaraunts => {
-        setRestaraunts(loadedRestaraunts);
-      });
+  useEffect(async () => {
+    const response = await fetch(
+      "https://uber-eats-mates.herokuapp.com/api/v1/restaurants"
+    );
+    const loadedRestaraunts = await response.json();
+
+    setRestaraunts(loadedRestaraunts);
   });
 
   return (
