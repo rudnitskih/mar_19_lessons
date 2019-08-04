@@ -29,8 +29,6 @@ export class MainPage extends React.PureComponent {
   }
 
   updateSearchValue = searchValue => {
-    this.state.searchValue = searchValue;
-
     this.setState({
       searchValue: searchValue
     });

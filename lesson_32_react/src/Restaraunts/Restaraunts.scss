@@ -1,0 +1,42 @@
+@mixin ellipsed-text($max-width) {
+  width: $max-width;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.restaurants__item {
+  margin: 0 10px 20px;
+  @include ellipsed-text(400px);
+}
+
+.restaurants__item_big {
+  @extend .restaurants__item;
+  font-size: 50px;
+}
+
+.restaurants__headr {
+  margin: 0 10px 20px;
+  @include ellipsed-text(200px);
+}
+
+@mixin box-shadow() {
+  box-shadow: unset;
+  -webkit-box-shadow: unset;
+  -ms-box-shadow: unset;
+}
+
+@for $index from 1 through 10 {
+  .header-card-#{$index} {
+    width: $index * 10 + '%'
+  }
+}
+
+.restaraunts {
+  margin: 0 auto;
+
+
+  &__item {
+
+  }
+}

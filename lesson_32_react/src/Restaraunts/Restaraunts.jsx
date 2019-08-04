@@ -1,18 +1,23 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import "./Restaraunts.scss";
 import { StoreCard } from "../StoreCard/StoreCard";
 
 export function Restaraunts(props) {
   const [restaurants, setRestaraunts] = useState([]);
 
-  useEffect(async () => {
-    const response = await fetch(
-      "https://uber-eats-mates.herokuapp.com/api/v1/restaurants"
-    );
-    const loadedRestaraunts = await response.json();
+  useEffect(() => {
+    async function fetchRestaraunts() {
+      const response = await fetch(
+        "https://uber-eats-mates.herokuapp.com/api/v1/restaurants"
+      );
+      const loadedRestaraunts = await response.json();
 
-    setRestaraunts(loadedRestaraunts);
-  });
+      setRestaraunts(loadedRestaraunts);
+    }
+
+    void fetchRestaraunts();
+  }, []);
 
   return (
     <ul className="restaurants">
